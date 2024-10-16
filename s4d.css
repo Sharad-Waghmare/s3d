@@ -1,0 +1,751 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5; /* Softer background color for readability */
+}
+
+.container {
+    width: 95%;
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    /* padding: 0 20px; */
+}
+
+/* Header and Navigation */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.nav-logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    background-color: #fff;
+    color: #e9a34d; /* Increased size for better branding visibility */
+}
+
+.nav-links {
+    display: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 1rem;
+    padding: 0.5rem 1rem; /* Added padding for better click targets */
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #e9a34d; /* Added hover effect */
+    color: white;
+    border-radius: 4px;
+}
+
+.hamburger {
+    display: block;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: background-color 0.3s ease;
+}
+
+.hamburger:hover div {
+    background-color: #e9a34d;
+}
+
+@media (min-width: 768px) {
+    .nav-links {
+        display: flex;
+    }
+    .hamburger {
+        display: none;
+    }
+}
+
+/* Main content */
+main {
+    /* padding: 2rem 0; */
+    background-color: #fff; /* Content is more readable on a white background */
+}
+
+h1, h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem; /* Larger font for H1 */
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+.grid {
+    display: grid;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+.video-placeholder, .image-placeholder {
+    background-color: #f0f0f0;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    color: #666;
+    transition: background-color 0.3s ease;
+}
+
+.video-placeholder:hover, .image-placeholder:hover {
+    background-color: #e0e0e0; /* Slight hover effect */
+}
+
+/* Expandable content */
+.expandable-point {
+    border: 1px solid #ddd;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.expandable-point button {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e9a34d;
+    transition: background-color 0.3s ease;
+}
+
+.expandable-point button:hover {
+    background-color: #4e4e4e;
+}
+
+.expandable-point .content {
+    display: none;
+    padding: 1rem;
+    background-color: #f9f9f9;
+}
+
+
+.extruder-points li {
+    margin-top: 0.5rem;
+}
+
+/* Form styles */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+input, textarea, button {
+    width: 100%;
+    padding: 0.75rem; /* Increased padding for better form usability */
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 1px solid #cccccc;
+}
+
+input:focus, textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 0.75rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+/* Existing styles remain unchanged */
+
+/* New styles for the Massive Printers section */
+.mp-container {
+    width: 100%;
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    /* padding: 0 20px; */
+}
+.full-width-section {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.video-container video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.video-overlay h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.video-overlay p {
+    font-size: 1.5rem;
+    max-width: 600px;
+}
+.content-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0;
+}
+
+.content-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.content-description {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.additional-description {
+    padding: 1rem 0;
+    text-align: left;
+    max-width: 800px;
+    margin-left: auto;
+}
+
+.additional-description h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.additional-description p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Update expandable points styles */
+.expandable-points {
+    max-width: 540px;
+    margin: 2rem 0  auto;
+}
+.expandable-points-ex {
+    max-width: 540px;
+    /* margin: 2rem 0 2rem auto; */
+}
+.right-aligned-container {
+    display: flex;
+    justify-content: flex-end; /* Aligns content to the right */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .video-overlay h2 {
+        font-size: 2rem;
+    }
+
+    .video-overlay p {
+        font-size: 1rem;
+    }
+
+    .additional-description h3 {
+        font-size: 1.5rem;
+    }
+
+}
+
+.gallery-item {
+    background-color: #f0f0f0;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    color: #666;
+    transition: background-color 0.3s ease;
+}
+
+.gallery-item:hover {
+    background-color: #e0e0e0;
+}
+/* Contact Us section styles */
+/* .left-aligned-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    background-color: #fff;
+}
+
+.contact-info {
+    max-width: 540px;
+    width: 100%;
+}
+
+form {
+    max-width: 540px;
+    width: 100%;
+} */
+ /* Full-width section */
+.full-width-section-cn {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    display: flex;
+}
+
+/* Image container */
+.image-container-cn {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.content-image-cn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Contact Us Overlay */
+.contact-overlay-cn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+/* Contact Us Content */
+.contact-content {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+    font-size: 25px;
+}
+
+
+/* Contact Info Styles */
+.contact-info {
+    flex: 1;
+    max-width: 600px;
+}
+
+/* Form Styles */
+form {
+    flex: 1;
+    max-width: 540px;
+    margin-left: 7rem;
+    margin: 15px auto;
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 1px solid #cccccc;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+form button {
+    background-color: #e9a34d;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Full-width section styling */
+ /* .full-width-section-ex {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+
+.image-container-ex {
+    display: flex;
+    width: 100%;
+}
+
+
+.left-image-ex {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+}
+
+.left-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.right-image-grid-ex {
+    display:grid;
+    flex: 1;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 5px;
+    height: 100%;
+}
+
+.grid-item {
+    width: 100%;
+    height: calc(50% - 2.5px);
+    overflow: hidden;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}  */
+/* Existing styles remain unchanged */
+
+
+
+/* html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+
+
+.full-width-section {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.extruder-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.extruder-left,
+.extruder-right {
+    width: 100%;
+    height: 100%;
+}
+
+.extruder-left {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+}
+
+.extruder-left .large-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.extruder-left .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 2rem;
+    text-align: left;
+}
+
+.extruder-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.grid-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+@media (max-width: 768px) {
+    .extruder-container {
+        flex-direction: column;
+        height: 200vh;
+        width: 100vh;
+    }
+
+    .extruder-left,
+    .extruder-right {
+        width: 100vh;
+        height: 100vh;
+    }
+
+    .extruder-left .video-overlay {
+        align-items: center;
+        text-align: center;
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+ */
+ html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+.ex-container {
+    width: 100%;
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    /* padding: 0 20px; */
+}
+
+/* Existing styles remain unchanged */
+
+.full-width-section {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Updated styles for the Extruder section */
+.extruder-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.extruder-left,
+.extruder-right {
+    width: 100%;
+    height: 100%;
+    flex: 1;
+}
+
+.extruder-left {
+    position: relative;
+    overflow: hidden;
+}
+
+.extruder-left .large-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.extruder-left .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 2rem;
+    text-align: left;
+}
+
+.extruder-right {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    background-color: #f5f5f5;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.grid-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .extruder-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .extruder-left,
+    .extruder-right {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .extruder-left .video-overlay {
+        align-items: center;
+        text-align: center;
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+
+/* Existing styles for other sections remain unchanged */
